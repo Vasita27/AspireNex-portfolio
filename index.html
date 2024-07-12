@@ -270,5 +270,18 @@
             var typed = new Typed(".typing", options);
         });
     </script>
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "95e8cd85-496c-475e-9afe-d38e18f042d5", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "a5534943-1b02-4197-8edd-5b57daf14ccb", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
 </body>
 </html>
